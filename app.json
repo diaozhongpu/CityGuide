@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/main/main",
     "pages/logs/logs",
     "pages/form/form",
-    "pages/main/main",
     "pages/main/hangzhou/hangzhou",
     "pages/main/hangzhou/map",
     "pages/main/hangzhou/xihu/xihu",

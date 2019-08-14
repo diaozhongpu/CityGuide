@@ -13,12 +13,12 @@ Page({
     list: [
       {
         id: 'xihu',
-        name: '西湖',
+        name: '杭州',
         open: false,
         pages: ['简介', '情况', '评论']
       }, {
         id: 'lingyinsi',
-        name: '灵隐寺',
+        name: '上海',
         open: false,
         pages: ['简介', '情况', '评论']
       }

@@ -28,5 +28,10 @@ Page({
   },
   controltap(e) {
     console.log(e.controlId)
+  },
+  GoToPage: function(param){
+    wx.navigateTo({
+      url: '/pages/main/hangzhou/hangzhou',
+    })
   }
 })
