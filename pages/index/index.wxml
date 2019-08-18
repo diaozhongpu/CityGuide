@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class='container' style="background: url('../picture/background.jpg')">
+
+  <view class="title">
+    <text class="titleword">城市导航</text>
+  </view>
+
+   
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登陆 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <navigator url='../form/form'>
+        <button>进入</button>
+      </navigator>
+    </block>
+    
+  <view class="introduction">
+    <text class="haha">城市导航——CityGuide用于给游客提供有价值的旅游信息，使游客们能开心有效地对城市中的各大景点进行游玩，欢迎使用！</text>
+  </view>
+      
+  </view>
+
+</view>
+

@@ -1,0 +1,138 @@
+<view class="index">
+
+  <view class="index-hd">
+
+    <view class="index-desc">请选择您要前往的城市以获取更多信息</view>
+
+  </view>
+
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}"bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+          </view>
+
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' :''}}">
+
+              <block wx:for-items="{{item.pages}}" wx:for-item="page"wx:key="*item">
+                <navigator url="../城市选择/{{page}}/{{page}}"class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="page-section-title">
+        <text>以下为热门城市以及交通运输方式</text>
+  </view>
+
+  <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+        <navigator url="../城市选择/杭州/杭州"class="navigatorsquare">
+          <view class="flex-item demo-text-1">
+            <text>
+              杭州
+            </text>
+          </view>
+          </navigator>
+          <navigator url="../城市选择/上海/上海"class="navigatorsquare">
+            <view class="flex-item demo-text-2">
+              <text>
+                上海
+              </text>
+            </view>
+          </navigator>
+        </view>
+        <view class="flex-wrp" style="flex-direction:row;">
+        <navigator url="../城市选择/南京/南京"class="navigatorsquare">
+          <view class="flex-item demo-text-3">
+            <text>
+              南京
+            </text>
+          </view>
+        </navigator>
+        <navigator url="../城市选择/城际交通/城际交通"class="navigatorsquare">
+          <view class="flex-item demo-text-4">
+            <text>
+              城际交通
+            </text>
+          </view>
+        </navigator>  
+        </view>
+
+  </view>
+</view>
+
+<view> 
+<button bindtap='showTalks'>查看评论</button> 
+</view>
+  
+  
+<!-- 整个评论区 -->
+<view class='talks-layer' animation='{{talksAnimationData}}'>
+<!-- 主要作用是点击后隐藏评论区 -->
+<view class='layer-white-space' bindtap='hideTalks'>
+</view>
+  
+  
+<!-- 评论区 -->
+<view class='talks' bindtouchstart='touchStart' bindtouchmove='touchMove'> 
+<!-- 评论头部 -->
+<view class='talk-header'> 
+<view class='talk-count'>{{talks.length}} 条评论</view> 
+<image src='../../../images/close.png' class='talk-close' bindtap='hideTalks'></image> 
+</view>
+  
+  
+<!-- 评论体 -->
+<scroll-view class='talk-body' scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view class='talk-item' wx:for="{{talks}}" wx:key="*this"> 
+<view class='talk-item-left'>
+<image class='talk-item-face' src='{{item.avatarUrl}}'></image>
+</view>
+<view class='talk-item-right'> 
+<view class='right-left'> 
+<text class='talk-item-nickname'>{{item.nickName}}</text> 
+<text class='talk-item-time'>{{item.talkTime}}</text> 
+</view> 
+<text class='talk-item-content'>{{item.content}}</text>
+  
+  
+</view> 
+</view> 
+</scroll-view>
+ 
+  
+<!-- 评论底部 -->
+<view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}"></view> 
+<view class=" {{isShow ?'footer_boxmovein' : 'talk-footer'}}"> 
+<view class='footer_box'> 
+<view class="emoji iconfont icon-emoji" catchtap="emojiShowHide"></view> 
+<input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='有爱评论，说点儿好听的~'></input> 
+<button class='fabu-input' bindtap='faBu'>发布</button> 
+</view>
+  
+<view wx:if='{{isShow}}' class="emoji-box {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}"> 
+<scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px"> 
+<block wx:for="{{emojis}}" wx:for-item="e" wx:key=""> 
+<view class="emoji-cell">
+<image class="touch-active" bindtap="emojiChoose" src="http://soupu.oss-cn-shanghai.aliyuncs.com/emoji/{{e.emoji}}.png" data-emoji="{{e.char}}" data-oxf="{{e.emoji}}"></image> 
+</view> 
+</block>
+  
+</scroll-view> 
+</view> 
+</view> 
+</view> 
+</view>

@@ -1,11 +1,13 @@
+//form.js
+
 Page({
   data: {
     talks: [],
     touchStart: 0,
     inputValue: '',
     inputBiaoqing: '',
-    faces: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535727304160&di=0cc9d01a4ae2deca5634c3136d5c01f6&imgtype=0&src=http%3A%2F%2Fimg5q.duitang.com%2Fuploads%2Fitem%2F201406%2F12%2F20140612202753_u4nG5.jpeg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535727304159&di=da2c1c4e868ee95f3cd65ffc6e24a456&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201505%2F01%2F20150501083603_yuTQc.jpeg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535727304156&di=7d46a1482a8e798a70d8d52320285b02&imgtype=0&src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F7b%2Ff9%2F01%2F7bf901db9091dff00a20d474c83afc45.jpg'],
-    names: ['贝贝', '晶晶', '欢欢', '妮妮'],
+    faces: ['https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566108410&di=8e0053e7fbb32341d0ae8caf98e347bb&src=http://b-ssl.duitang.com/uploads/item/201411/10/20141110082413_Ssjyz.thumb.700_0.jpeg', 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566108410&di=4486c0cf11e3b8be287c0646a14f1893&src=http://b-ssl.duitang.com/uploads/item/201411/10/20141110084037_R2Hyx.jpeg', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3133392387,704141259&fm=26&gp=0.jpg','https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4100073575,2501831933&fm=26&gp=0.jpg'],
+    names: ['小明', '李先生', '王小姐', '赵女士'],
     isShow: false, //控制emoji表情是否显示 
     isLoad: true, //解决初试加载时emoji动画执行一次
     cfBg: false,
@@ -27,9 +29,13 @@ Page({
     ],
     emojis: [], //qq、微信原始表情
     alipayEmoji: [], //支付宝表情
+
+
   },
 
   onLoad: function () {
+
+
     var em = {},
       that = this,
       emChar = that.data.emojiChar.split("-");
@@ -45,6 +51,10 @@ Page({
       emojis: emojis
     })
   },
+
+
+
+
   //解决滑动穿透问题
   emojiScroll: function (e) {
     console.log(e)
@@ -109,12 +119,9 @@ Page({
     wx.showNavigationBarLoading();
     let that = this;
     let talks = [];
-    let faces = ['https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1535701703&di=bfde939cc559b0f8edcbfd1adb6e667d&src=http://img5q.duitang.com/uploads/item/201505/15/20150515205520_iWF2U.jpeg',
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535711703167&di=ce7a08b889137a70f7b4568e13df0e4d&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F6f061d950a7b02088811236964d9f2d3562cc85a.jpg',
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1535711703162&di=8ec21b75cb44de532f8be29300f075b0&imgtype=0&src=http%3A%2F%2Fpic36.photophoto.cn%2F20150710%2F0005018347189196_b.jpg',
-    ];
-    let names = ['佳佳', '晶晶', '欢欢', '妮妮', '娜娜', '锅锅'];
-    let contents = ['为什么你总是对我不理不睬呢', '干嘛老是不见你了', '我们都有字节的梦想', '你有什么资格不努力呢'];
+    let faces = ['https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566108410&di=8e0053e7fbb32341d0ae8caf98e347bb&src=http://b-ssl.duitang.com/uploads/item/201411/10/20141110082413_Ssjyz.thumb.700_0.jpeg', 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1566108410&di=4486c0cf11e3b8be287c0646a14f1893&src=http://b-ssl.duitang.com/uploads/item/201411/10/20141110084037_R2Hyx.jpeg', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3133392387,704141259&fm=26&gp=0.jpg', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4100073575,2501831933&fm=26&gp=0.jpg'];
+    let names = ['小明', '李先生', '王小姐', '赵女士', '匿名用户'];
+    let contents = ['杭州的西湖景色很美！', '推荐南京到上海的高铁，很快~', '我们都有旅行的梦想', '希望攻略能够越做越好！'];
     let talktime = '刚刚';
     console.log(talktime)
     talks = talks.concat(that.data.talks);

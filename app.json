@@ -1,37 +1,26 @@
 {
   "pages": [
-    "pages/main/main",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/form/form",
-    "pages/main/hangzhou/hangzhou",
-    "pages/main/hangzhou/map",
-    "pages/main/hangzhou/xihu/xihu",
-    "pages/main/hangzhou/lingyinsi/lingyinsi"
+    "pages/main/城市选择/城市选择",
+    "pages/main/城市选择/杭州/杭州",
+    "pages/main/城市选择/上海/上海",
+    "pages/main/城市选择/南京/南京",
+    "pages/main/城市选择/城际交通/城际交通",
+    "pages/main/城市选择/杭州/杭州景点/杭州景点",
+    "pages/main/城市选择/杭州/杭州交通/杭州交通",
+    "pages/main/城市选择/杭州/杭州美食/杭州美食",
+    "pages/main/城市选择/杭州/杭州住宿/杭州住宿",
+    "pages/main/城市选择/杭州/杭州景点/西湖/情况/情况",
+    "pages/main/城市选择/杭州/杭州景点/西湖/简介/简介",
+    "pages/main/城市选择/杭州/杭州景点/西湖/评论/评论"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/main/main",
-        "text": "首页",
-        "iconPath": "pages/picture/index.jpg"
-      },
-      {
-        "pagePath": "pages/form/form",
-        "text": "表单",
-        "iconPath": "pages/picture/form.jpg"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
-        "iconPath": "pages/picture/log.jpg"
-      }
-    ]
   },
   "sitemapLocation": "sitemap.json"
 }

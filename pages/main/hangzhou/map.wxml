@@ -1,7 +1,0 @@
-<view class="index">
-  <view class="index-hd">
-    <view class="index-desc">下面为杭州的各个景区，点击即可获得相关信息</view>
-  </view>
-  <button bindtap='GoToPage'>所有景点</button>
-  <map id="map" longitude="120.07965" latitude="30.30200" scale="12" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 500px;"></map>
-</view>

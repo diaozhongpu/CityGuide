@@ -1,5 +1,8 @@
+<view>(简介）这是浙江大学微信小程序课程大作业，期待您的评论！</view>
+
+
 <view> 
-<button bindtap='showTalks'>查看评论</button> 
+<button bindtap='showTalks'>我要评论</button> 
 </view>
   
   
