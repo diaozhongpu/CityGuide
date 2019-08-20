@@ -1,4 +1,7 @@
 //app.js
+
+var amapFile = require('pages/libs/amap-wx.js');
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
